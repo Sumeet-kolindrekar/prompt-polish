@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "PromptPolish",
+  "version": "0.1.0",
+  "description": "Turn rough prompts into clear, specific ones with one click — and see why the new version is better.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.anthropic.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "options_page": "options.html"
+}
